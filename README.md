@@ -4,12 +4,12 @@ Hypixel SkyBlock Menu system for PocketMine-MP Bedrock Edition.
 
 ## Version
 
-**2.0.0** — PMMP 5.43.2 compatible
+**2.0.0** — PMMP API 5.41.0+ / 5.43.2 compatible
 
 ## Requirements
 
 ### Required
-- **PocketMine-MP 5.43.2+**
+- **PocketMine-MP 5.43.2+ (API 5.41.0+ required for the InvMenu virion)**
 - **PHP 8.2**
 - **DevTools** (for virion loading)
 - **InvMenu virion** (library, not plugin)

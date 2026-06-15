@@ -18,3 +18,4 @@ projects:
         version: ^4.7.4
     # No external plugin dependencies (InvMenu is a virion, not a plugin)
     # EconomyAPI is optional soft-depend only
+
