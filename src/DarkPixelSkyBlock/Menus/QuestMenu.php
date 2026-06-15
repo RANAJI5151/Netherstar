@@ -22,6 +22,7 @@ final class QuestMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: QuestMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("quest_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lQuest Log"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

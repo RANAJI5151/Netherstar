@@ -33,6 +33,7 @@ final class SettingsMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: SettingsMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("settings_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lSettings"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

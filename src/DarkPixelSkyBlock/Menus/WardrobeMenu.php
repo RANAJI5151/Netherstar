@@ -22,6 +22,7 @@ final class WardrobeMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: WardrobeMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("wardrobe_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lWardrobe"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

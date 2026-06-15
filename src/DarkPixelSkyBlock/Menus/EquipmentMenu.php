@@ -23,6 +23,7 @@ final class EquipmentMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: EquipmentMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("equipment_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lEquipment"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

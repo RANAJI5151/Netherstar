@@ -23,6 +23,7 @@ final class FastTravelMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: FastTravelMenu");
         $cfg       = $this->plugin->getConfigManager()->getSubmenuConfig("fast_travel_menu");
         $title     = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lFast Travel"));
         $back      = (int) ($cfg["back_slot"] ?? 49);

@@ -37,6 +37,7 @@ final class MenuManager {
     public function openMainMenu(Player $player): void {
         if (!$this->checkPermission($player, "darkpixelskyblock.command.sbmenu")) return;
 
+        $this->plugin->getLogger()->info("Opening menu: MainMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "main";
         $this->plugin->getConfigManager()->debugLog("Opening MainMenu for " . $player->getName());
@@ -49,6 +50,7 @@ final class MenuManager {
     }
 
     public function openProfileMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: ProfileMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "profile";
         try {
@@ -59,6 +61,7 @@ final class MenuManager {
     }
 
     public function openSkillsMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: SkillsMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "skills";
         try {
@@ -69,6 +72,7 @@ final class MenuManager {
     }
 
     public function openCollectionsMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: CollectionsMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "collections";
         try {
@@ -79,6 +83,7 @@ final class MenuManager {
     }
 
     public function openRecipeBookMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: RecipeBookMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "recipe_book";
         try {
@@ -89,6 +94,7 @@ final class MenuManager {
     }
 
     public function openQuestMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: QuestMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "quest";
         try {
@@ -99,6 +105,7 @@ final class MenuManager {
     }
 
     public function openStorageMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: StorageMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "storage";
         try {
@@ -109,6 +116,7 @@ final class MenuManager {
     }
 
     public function openWardrobeMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: WardrobeMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "wardrobe";
         try {
@@ -119,6 +127,7 @@ final class MenuManager {
     }
 
     public function openEquipmentMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: EquipmentMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "equipment";
         try {
@@ -129,6 +138,7 @@ final class MenuManager {
     }
 
     public function openFastTravelMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: FastTravelMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "fast_travel";
         try {
@@ -139,6 +149,7 @@ final class MenuManager {
     }
 
     public function openSettingsMenu(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: SettingsMenu");
         $this->plugin->getSoundManager()->playSound($player, "menu_open");
         $this->openMenus[$player->getName()] = "settings";
         try {

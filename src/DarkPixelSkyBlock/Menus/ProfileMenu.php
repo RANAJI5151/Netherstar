@@ -22,6 +22,7 @@ final class ProfileMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: ProfileMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("profile_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lYour Profile"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

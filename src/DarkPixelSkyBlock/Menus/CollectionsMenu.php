@@ -38,6 +38,7 @@ final class CollectionsMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: CollectionsMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("collections_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lCollections"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

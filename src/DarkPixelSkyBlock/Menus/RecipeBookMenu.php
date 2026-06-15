@@ -23,6 +23,7 @@ final class RecipeBookMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: RecipeBookMenu");
         $cfg   = $this->plugin->getConfigManager()->getSubmenuConfig("recipe_book_menu");
         $title = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lRecipe Book"));
         $back  = (int) ($cfg["back_slot"] ?? 49);

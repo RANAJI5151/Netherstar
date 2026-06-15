@@ -33,6 +33,7 @@ final class MainMenu {
     public function __construct(private readonly Main $plugin) {}
 
     public function open(Player $player): void {
+        $this->plugin->getLogger()->info("Opening menu: MainMenu");
         $cfg      = $this->plugin->getConfigManager()->getMainMenuConfig();
         $title    = MenuUtils::colorize((string) ($cfg["title"] ?? "§8§lSkyBlock Menu"));
         $slots    = (array) ($cfg["slots"]           ?? []);
