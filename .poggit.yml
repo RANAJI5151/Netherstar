@@ -15,7 +15,7 @@ projects:
     libs:
       # InvMenu virion — injected at build time by DevTools
       - src: muqsit/InvMenu/InvMenu
-        version: ^4.7.4
+        version: 4.7.4
     # No external plugin dependencies (InvMenu is a virion, not a plugin)
     # EconomyAPI is optional soft-depend only
 

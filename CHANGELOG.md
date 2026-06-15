@@ -7,7 +7,7 @@
 - **PMMP 5.x item API** — replaced deprecated `VanillaItems::RAW_FISH()` with `VanillaItems::COD()` in `CollectionsMenu.php` (PMMP 5.x renamed raw fish items to their cooked names).
 
 ### Poggit & Virion v3 Setup
-- **Added `.poggit.yml`** — declares `muqsit/InvMenu/InvMenu` as a virion dependency with a compatible `^4.7.4` constraint, enabling Poggit CI builds.
+- **Added `.poggit.yml`** — declares `muqsit/InvMenu/InvMenu` as a virion dependency with the exact published `4.7.4` virion build, enabling Poggit CI builds.
 - **Aligned plugin API** — `plugin.yml` now declares PMMP API `5.41.0` to match the published InvMenu 4.7.4 virion requirement used by Poggit.
 - **Removed all InvMenu plugin-dependency references** — `plugin.yml` has no `depend` or `softdepend` for InvMenu; it is strictly a virion.
 - **Clean plugin.yml** — only `softdepend: [EconomyAPI]` remains for the optional economy bridge.
