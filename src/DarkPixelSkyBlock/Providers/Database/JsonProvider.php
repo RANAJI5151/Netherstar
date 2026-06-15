@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DarkPixelSkyBlock\Providers\Database;
 
 use DarkPixelSkyBlock\Main;
+use Throwable;
 
 /**
  * JsonProvider
@@ -33,14 +34,29 @@ final class JsonProvider {
         $raw = file_get_contents($file);
         if ($raw === false) return [];
 
-        $decoded = json_decode($raw, true);
-        return is_array($decoded) ? $decoded : [];
+        try {
+            $decoded = json_decode($raw, true, 512, JSON_THROW_ON_ERROR);
+            return is_array($decoded) ? $decoded : [];
+        } catch (Throwable $e) {
+            $this->plugin->getLogger()->error(
+                "JsonProvider::load({$playerName}) failed — " . $e->getMessage()
+            );
+            return [];
+        }
     }
 
     /** @param array<string, mixed> $data */
     public function save(string $playerName, array $data): void {
         $file = $this->getFilePath($playerName);
-        file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+        try {
+            $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
+            file_put_contents($file, $json, LOCK_EX);
+        } catch (Throwable $e) {
+            $this->plugin->getLogger()->error(
+                "JsonProvider::save({$playerName}) failed — " . $e->getMessage()
+            );
+        }
     }
 
     public function delete(string $playerName): void {

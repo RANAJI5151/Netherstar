@@ -1,7 +1,7 @@
 name: DarkPixelSkyBlock
 main: DarkPixelSkyBlock\Main
 version: "2.0.0"
-api: ["5.41.0"]
+api: ["5.43.2"]
 description: "Hypixel SkyBlock Menu system for PocketMine-MP Bedrock"
 author: DarkPixel
 website: https://github.com/DarkPixel/DarkPixelSkyBlock

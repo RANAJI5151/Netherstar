@@ -105,12 +105,13 @@ final class ConfigManager {
 
     /** Locked hotbar slot for the SkyBlock menu item (0-indexed). */
     public function getLockedSlot(): int {
-        return (int) ($this->getMenuItemConfig()["locked_slot"] ?? 8);
+        $slot = (int) ($this->getMenuItemConfig()["locked_slot"] ?? 8);
+        return max(0, min(8, $slot));
     }
 
     /** Menu-open cooldown in seconds (0 = no cooldown). */
     public function getMenuOpenCooldown(): float {
-        return (float) ($this->getCooldownsConfig()["menu_open"] ?? 1.0);
+        return max(0.0, (float) ($this->getCooldownsConfig()["menu_open"] ?? 1.0));
     }
 
     /** True when performance.cache_items is set. */

@@ -32,10 +32,19 @@ final class EconomyManager {
         $cfg      = $this->plugin->getConfigManager()->getEconomyConfig();
         $provName = strtolower((string) ($cfg["provider"] ?? "internal"));
 
-        $this->provider = match ($provName) {
+        $provider = match ($provName) {
             "economyapi" => new EconomyAPIProvider($this->plugin),
             default      => new InternalEconomyProvider($this->plugin),
         };
+
+        if ($provider instanceof EconomyAPIProvider && !$provider->isAvailable()) {
+            $this->plugin->getLogger()->warning(
+                "EconomyAPI provider unavailable; falling back to internal economy."
+            );
+            $provider = new InternalEconomyProvider($this->plugin);
+        }
+
+        $this->provider = $provider;
 
         $this->plugin->getLogger()->info(
             "Economy provider loaded: §e" . $this->provider->getName()

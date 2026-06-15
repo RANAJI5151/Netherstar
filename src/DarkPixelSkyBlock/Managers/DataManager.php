@@ -32,11 +32,20 @@ final class DataManager {
         $cfg      = $this->plugin->getConfigManager()->getDatabaseConfig();
         $provName = strtolower((string) ($cfg["provider"] ?? "json"));
 
-        $this->provider = match ($provName) {
+        $provider = match ($provName) {
             "yaml"   => new YamlProvider($this->plugin),
             "sqlite" => new SQLiteProvider($this->plugin),
             default  => new JsonProvider($this->plugin),
         };
+
+        if ($provider instanceof SQLiteProvider && !$provider->isAvailable()) {
+            $this->plugin->getLogger()->warning(
+                "SQLite provider is unavailable; falling back to JSON storage."
+            );
+            $provider = new JsonProvider($this->plugin);
+        }
+
+        $this->provider = $provider;
 
         $this->plugin->getLogger()->info(
             "Database provider loaded: §e" . $this->provider->getName()

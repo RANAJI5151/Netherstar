@@ -1,5 +1,18 @@
 # DarkPixelSkyBlock Changelog
 
+## v2.0.1 — Audit fixes, PMMP 5.43.2 compatibility, and PHP 8.2 validation
+
+### Audit Fixes
+- Updated `plugin.yml` API version to `5.43.2` for PocketMine-MP 5.43.2 compatibility.
+- Added defensive slot bounds checking for the locked hotbar menu item.
+- Hardened menu item persistence: cleanup now scans player inventory, armor, and off-hand inventories.
+- Added `PlayerDeathEvent` handling to prevent the SkyBlock menu item from dropping on death.
+- Added safe JSON load/save error handling and atomic writes in `JsonProvider`.
+- Added fallback from SQLite to JSON storage when SQLite is unavailable.
+- Added fallback from EconomyAPI to internal economy when EconomyAPI is missing.
+- Swapped direct `PLAYER_HEAD` usage in ProfileMenu for a safe player-head helper.
+- Verified all PHP files compile cleanly under PHP 8.2 using Docker.
+
 ## v2.0.0 — Production Modernization & Poggit Compliance
 
 ### Critical Fixes

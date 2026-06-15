@@ -43,6 +43,8 @@ final class MenuItemListener implements Listener {
     // ─────────────────────────────────────────────────────────────────────────
 
     public function onItemUse(PlayerItemUseEvent $event): void {
+        if ($event->isCancelled()) return;
+
         $player = $event->getPlayer();
         $item   = $event->getItem();
 
@@ -62,6 +64,8 @@ final class MenuItemListener implements Listener {
      * This prevents the double-fire issue when both events trigger.
      */
     public function onInteract(PlayerInteractEvent $event): void {
+        if ($event->isCancelled()) return;
+
         // Only act on block clicks to avoid double-firing with PlayerItemUseEvent
         if ($event->getAction() !== PlayerInteractEvent::RIGHT_CLICK_BLOCK) return;
 
@@ -79,6 +83,8 @@ final class MenuItemListener implements Listener {
     // ─────────────────────────────────────────────────────────────────────────
 
     public function onDropItem(PlayerDropItemEvent $event): void {
+        if ($event->isCancelled()) return;
+
         $player = $event->getPlayer();
         $item   = $event->getItem();
 

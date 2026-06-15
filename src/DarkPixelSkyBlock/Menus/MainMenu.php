@@ -285,7 +285,7 @@ final class MainMenu {
     }
 
     private function showInformation(Player $player): void {
-        $ver = "2.0.0";
+        $ver = $this->plugin->getDescription()->getVersion();
         $player->sendMessage(
             $this->plugin->getConfigManager()->getPrefix() .
             "§bDarkPixelSkyBlock §7v{$ver} — Hypixel SkyBlock Menu for PocketMine-MP"

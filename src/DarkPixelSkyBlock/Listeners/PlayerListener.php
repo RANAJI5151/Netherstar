@@ -6,6 +6,7 @@ namespace DarkPixelSkyBlock\Listeners;
 
 use DarkPixelSkyBlock\Main;
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
@@ -89,6 +90,20 @@ final class PlayerListener implements Listener {
         $this->plugin->getMenuManager()->clearMenu($player);
 
         $this->plugin->getConfigManager()->debugLog("Player quit, data saved: " . $player->getName());
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // DEATH
+    // ─────────────────────────────────────────────────────────────────────────
+
+    public function onPlayerDeath(PlayerDeathEvent $event): void {
+        $drops = $event->getDrops();
+        foreach ($drops as $index => $item) {
+            if ($this->plugin->getItemManager()->isMenuItem($item)) {
+                unset($drops[$index]);
+            }
+        }
+        $event->setDrops(array_values($drops));
     }
 
     // ─────────────────────────────────────────────────────────────────────────

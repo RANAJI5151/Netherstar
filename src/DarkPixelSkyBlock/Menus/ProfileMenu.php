@@ -39,7 +39,7 @@ final class ProfileMenu {
         for ($i = 0; $i < 54; $i++) $inv->setItem($i, $filler);
 
         // ── Player Head (centre top) ──────────────────────────────────────────
-        $head = VanillaItems::PLAYER_HEAD()->setCount(1);
+        $head = $this->plugin->getItemManager()->createPlayerHeadItem();
         $head->setCustomName("§e§l" . $player->getName());
         $head->setLore([
             "",

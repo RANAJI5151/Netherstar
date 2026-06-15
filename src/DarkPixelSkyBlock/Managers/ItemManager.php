@@ -115,12 +115,13 @@ final class ItemManager {
      */
     public function giveMenuItem(Player $player): void {
         try {
-            $inv = $player->getInventory();
+            $inv  = $player->getInventory();
+            $slot = min(max(0, $this->lockedSlot), $inv->getSize() - 1);
             $this->removeAllMenuItems($player);
-            $inv->setItem($this->lockedSlot, $this->createMenuItemStack());
+            $inv->setItem($slot, $this->createMenuItemStack());
 
             $this->plugin->getConfigManager()->debugLog(
-                "Menu item given to " . $player->getName() . " at slot {$this->lockedSlot}"
+                "Menu item given to " . $player->getName() . " at slot {$slot}"
             );
         } catch (Throwable $e) {
             $this->plugin->getLogger()->error(
@@ -137,14 +138,15 @@ final class ItemManager {
     public function ensureMenuItem(Player $player): void {
         try {
             $inv  = $player->getInventory();
-            $item = $inv->getItem($this->lockedSlot);
+            $slot = min(max(0, $this->lockedSlot), $inv->getSize() - 1);
+            $item = $inv->getItem($slot);
 
             // Fast path: item is already correct
             if ($this->isMenuItem($item)) return;
 
             // Remove any stray duplicates, then restore to the locked slot
             $this->removeAllMenuItems($player);
-            $inv->setItem($this->lockedSlot, $this->createMenuItemStack());
+            $inv->setItem($slot, $this->createMenuItemStack());
 
             $this->plugin->getConfigManager()->debugLog(
                 "Restored menu item for " . $player->getName()
@@ -169,10 +171,17 @@ final class ItemManager {
      * Scans only the player's own inventory — not armour or off-hand.
      */
     public function removeAllMenuItems(Player $player): void {
-        $inv = $player->getInventory();
-        foreach ($inv->getContents() as $slot => $item) {
+        $this->removeMenuItemsFromInventory($player->getInventory());
+        $this->removeMenuItemsFromInventory($player->getArmorInventory());
+        $this->removeMenuItemsFromInventory($player->getOffHandInventory());
+    }
+
+    private function removeMenuItemsFromInventory(
+        \pocketmine\inventory\Inventory $inventory
+    ): void {
+        foreach ($inventory->getContents() as $slot => $item) {
             if ($this->isMenuItem($item)) {
-                $inv->clear($slot);
+                $inventory->clear($slot);
             }
         }
     }

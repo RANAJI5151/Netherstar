@@ -4,12 +4,20 @@ A comprehensive Hypixel SkyBlock menu system for PocketMine-MP Bedrock Edition. 
 
 ## Version
 
-**2.0.0** — PocketMine-MP API 5.41.0+
+**2.0.0** — PocketMine-MP API 5.43.2+
 
 ## Requirements
 
-- **PocketMine-MP 5.41.0+** (API 5.41.0 or higher)
+- **PocketMine-MP 5.43.2+**
 - **PHP 8.2+**
+- **InvMenu 4.7+** (virion)
+
+## Compatibility Notes
+
+- Plugin load and PHP syntax validation were audited against PHP 8.2.
+- `plugin.yml` now declares API `5.43.2` for PocketMine-MP 5.43.2 compatibility.
+- `InvMenu` is provided via `.poggit.yml` virion configuration.
+- JSON, YAML, and SQLite storage providers are supported with fallback handling.
 
 ### Optional Dependencies
 - **EconomyAPI** — For external economy integration (soft dependency)
