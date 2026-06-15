@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DarkPixelSkyBlock\Managers;
 
 use DarkPixelSkyBlock\Main;
+use pocketmine\block\VanillaBlocks;
 use pocketmine\item\Item;
 use pocketmine\item\VanillaItems;
 use pocketmine\nbt\tag\StringTag;
@@ -189,7 +190,7 @@ final class ItemManager {
         }
         $cfg  = $this->plugin->getConfigManager()->getItemConfig("filler");
         $name = TextFormat::colorize((string) ($cfg["name"] ?? "§r"));
-        $item = VanillaItems::GRAY_STAINED_GLASS_PANE()->setCount(1);
+        $item = VanillaBlocks::GRAY_STAINED_GLASS_PANE()->asItem()->setCount(1);
         $item->setCustomName($name);
         $item->setLore([]);
         $this->cachedFiller = $item;
