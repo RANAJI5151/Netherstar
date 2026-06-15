@@ -1,6 +1,20 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/RANAJI5151/Netherstar
-build-by-default: true
+---
+# Poggit Build Pipeline — DarkPixelSkyBlock v2.0.0
+# https://github.com/poggit/support/blob/master/poggit.yml.md
+
 branches:
-- main
-projects: []
-...
+  - master
+  - main
+
+projects:
+  DarkPixelSkyBlock:
+    path: ""
+    icon: "icon.png"
+    # Language: PHP (PocketMine-MP plugin)
+    # PMMP 5.43.2 | PHP 8.2
+    libs:
+      # InvMenu virion — injected at build time by DevTools
+      - src: muqsit/InvMenu/InvMenu
+        version: ^4.7.0
+    # No external plugin dependencies (InvMenu is a virion, not a plugin)
+    # EconomyAPI is optional soft-depend only

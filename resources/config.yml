@@ -1,0 +1,120 @@
+# DarkPixelSkyBlock - Main Configuration
+# PocketMine-MP 5.43.2 | PHP 8.2
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GENERAL SETTINGS
+# ─────────────────────────────────────────────────────────────────────────────
+general:
+  prefix: "&8[&bSkyBlock&8]&r "
+  language: "en"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DEBUG
+# When enabled: logs menu opens, item restores, DB actions, economy actions.
+# Disable in production for best performance.
+# ─────────────────────────────────────────────────────────────────────────────
+debug:
+  enabled: false
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SKYBLOCK MENU ITEM
+# ─────────────────────────────────────────────────────────────────────────────
+menu_item:
+  locked_slot: 8          # 0-indexed hotbar slot (8 = far right). Slot is LOCKED.
+  restore_interval: 40    # ticks between restore checks (40 = 2 seconds)
+  silent_restore: true    # true = restore without sending a chat message
+  # Custom NBT tag — identifies the item. Do NOT change after first run.
+  nbt_tag_key: "DarkPixelSkyBlock"
+  nbt_tag_value: "SkyBlockMenu"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# COOLDOWNS  (in seconds; 0 = no cooldown)
+# ─────────────────────────────────────────────────────────────────────────────
+cooldowns:
+  menu_open: 1      # Minimum seconds between main menu opens per player
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SOUNDS
+# ─────────────────────────────────────────────────────────────────────────────
+sounds:
+  enabled: true           # Master toggle — set false to disable all sounds
+  menu_open:
+    id: "random.orb"
+    volume: 1.0
+    pitch: 1.0
+  menu_click:
+    id: "random.click"
+    volume: 1.0
+    pitch: 1.2
+  menu_close:
+    id: "random.pop"
+    volume: 0.5
+    pitch: 1.0
+  menu_back:
+    id: "random.click"
+    volume: 1.0
+    pitch: 0.8
+  item_restore:
+    id: "random.orb"
+    volume: 0.7
+    pitch: 1.5
+  error:
+    id: "mob.villager.no"
+    volume: 1.0
+    pitch: 1.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PERFORMANCE
+# ─────────────────────────────────────────────────────────────────────────────
+performance:
+  cache_items: true           # Cache menu item stack; clone on use
+  optimized_listeners: true   # Only scan player inventory, not all actions
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PERMISSIONS
+# ─────────────────────────────────────────────────────────────────────────────
+permissions:
+  use_menu: "darkpixelskyblock.command.sbmenu"
+  give_item: "darkpixelskyblock.command.givemenuitem"
+  bypass: "darkpixelskyblock.bypass.restrictions"
+  admin: "darkpixelskyblock.admin"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ECONOMY
+# ─────────────────────────────────────────────────────────────────────────────
+economy:
+  # Providers: "internal", "economyapi"
+  provider: "internal"
+  starting_coins: 500
+  starting_bank_coins: 0
+  currency_symbol: "§6"
+  currency_name: "Coins"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DATABASE
+# ─────────────────────────────────────────────────────────────────────────────
+database:
+  # Providers: "json", "yaml", "sqlite"
+  provider: "json"
+  auto_save_interval: 6000   # ticks (6000 = 5 minutes)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FEATURE TOGGLES
+# ─────────────────────────────────────────────────────────────────────────────
+features:
+  profile: true
+  skills: true
+  collections: true
+  recipe_book: true
+  trades: true
+  quest_log: true
+  calendar: true
+  storage: true
+  bank: true
+  pets: true
+  crafting: true
+  wardrobe: true
+  equipment: true
+  fast_travel: true
+  settings: true
+  booster_cookie: true

@@ -1,0 +1,121 @@
+# DarkPixelSkyBlock - Menu Configuration
+# Define slot positions, titles, and enabled buttons for every menu.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN MENU
+# ─────────────────────────────────────────────────────────────────────────────
+main_menu:
+  title: "§8§lSkyBlock Menu"
+  size: 54  # Must be 54 (double chest)
+
+  # Slot positions for each button (0-53)
+  slots:
+    profile:        4
+    skyblock_level: 13
+    skills:         19
+    collections:    20
+    recipe_book:    21
+    trades:         22
+    quest_log:      23
+    calendar:       24
+    storage:        25
+    bank:           31
+    pets:           28
+    crafting:       29
+    wardrobe:       30
+    equipment:      32
+    fast_travel:    33
+    settings:       49
+    close:          53
+    booster_cookie: 10
+    information:    40
+
+  enabled_buttons:
+    profile: true
+    skyblock_level: true
+    skills: true
+    collections: true
+    recipe_book: true
+    trades: true
+    quest_log: true
+    calendar: true
+    storage: true
+    bank: true
+    pets: true
+    crafting: true
+    wardrobe: true
+    equipment: true
+    fast_travel: true
+    settings: true
+    close: true
+    booster_cookie: true
+    information: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SUBMENUS
+# ─────────────────────────────────────────────────────────────────────────────
+profile_menu:
+  title: "§8§lYour Profile"
+  size: 54
+  back_slot: 49
+
+skills_menu:
+  title: "§8§lYour Skills"
+  size: 54
+  back_slot: 49
+  skills:
+    - farming
+    - mining
+    - combat
+    - foraging
+    - fishing
+    - enchanting
+    - alchemy
+    - taming
+    - carpentry
+
+collections_menu:
+  title: "§8§lCollections"
+  size: 54
+  back_slot: 49
+
+recipe_book_menu:
+  title: "§8§lRecipe Book"
+  size: 54
+  back_slot: 49
+
+quest_menu:
+  title: "§8§lQuest Log"
+  size: 54
+  back_slot: 49
+
+storage_menu:
+  title: "§8§lStorage"
+  size: 54
+  back_slot: 49
+
+wardrobe_menu:
+  title: "§8§lWardrobe"
+  size: 54
+  back_slot: 49
+
+equipment_menu:
+  title: "§8§lEquipment"
+  size: 54
+  back_slot: 49
+
+fast_travel_menu:
+  title: "§8§lFast Travel"
+  size: 54
+  back_slot: 49
+  locations:
+    - Hub Island
+    - The Farming Islands
+    - The Mining Islands
+    - Combat Zone
+    - The End
+
+settings_menu:
+  title: "§8§lSettings"
+  size: 54
+  back_slot: 49

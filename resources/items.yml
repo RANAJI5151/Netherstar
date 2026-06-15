@@ -1,0 +1,215 @@
+# DarkPixelSkyBlock - Items Configuration
+# Configure names, lore, and identifiers for every menu item.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SKYBLOCK MENU ITEM (Hotbar)
+# ─────────────────────────────────────────────────────────────────────────────
+skyblock_menu_item:
+  name: "§r§bSkyBlock Menu"
+  lore:
+    - "§7Right-click to open"
+    - "§7the SkyBlock Menu."
+    - ""
+    - "§eClick to open!"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FILLER (glass pane background)
+# ─────────────────────────────────────────────────────────────────────────────
+filler:
+  name: "§r"
+  lore: []
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN MENU BUTTONS
+# ─────────────────────────────────────────────────────────────────────────────
+profile_button:
+  name: "§r§e§lYour Profile"
+  lore:
+    - ""
+    - "§7View your SkyBlock profile,"
+    - "§7stats, and progression."
+    - ""
+    - "§eClick to view!"
+
+skyblock_level_button:
+  name: "§r§b§lSkyBlock Level"
+  lore:
+    - ""
+    - "§7Your current SkyBlock Level."
+    - ""
+    - "§7Level: §b{level}"
+    - ""
+    - "§eClick to view!"
+
+skills_button:
+  name: "§r§a§lSkills"
+  lore:
+    - ""
+    - "§7Increase your Skills by"
+    - "§7completing tasks on your island."
+    - ""
+    - "§eClick to view!"
+
+collections_button:
+  name: "§r§6§lCollections"
+  lore:
+    - ""
+    - "§7Track all the resources"
+    - "§7you have gathered."
+    - ""
+    - "§eClick to view!"
+
+recipe_book_button:
+  name: "§r§f§lRecipe Book"
+  lore:
+    - ""
+    - "§7View all available"
+    - "§7SkyBlock recipes."
+    - ""
+    - "§eClick to view!"
+
+trades_button:
+  name: "§r§d§lTrades"
+  lore:
+    - ""
+    - "§7Trade with NPCs and"
+    - "§7other players."
+    - ""
+    - "§eClick to view!"
+
+quest_log_button:
+  name: "§r§e§lQuest Log"
+  lore:
+    - ""
+    - "§7Track your active quests"
+    - "§7and rewards."
+    - ""
+    - "§eClick to view!"
+
+calendar_button:
+  name: "§r§f§lCalendar & Events"
+  lore:
+    - ""
+    - "§7View upcoming events"
+    - "§7and the SkyBlock calendar."
+    - ""
+    - "§eClick to view!"
+
+storage_button:
+  name: "§r§6§lStorage"
+  lore:
+    - ""
+    - "§7Access your personal"
+    - "§7storage chests."
+    - ""
+    - "§eClick to view!"
+
+bank_button:
+  name: "§r§6§lPersonal Bank"
+  lore:
+    - ""
+    - "§7Deposit and withdraw"
+    - "§7your Coins safely."
+    - ""
+    - "§7Balance: §6{bank} Coins"
+    - ""
+    - "§eClick to view!"
+
+pets_button:
+  name: "§r§a§lPets"
+  lore:
+    - ""
+    - "§7View and manage"
+    - "§7your pets."
+    - ""
+    - "§eClick to view!"
+
+crafting_button:
+  name: "§r§f§lCrafting Table"
+  lore:
+    - ""
+    - "§7Open the crafting"
+    - "§7interface."
+    - ""
+    - "§eClick to open!"
+
+wardrobe_button:
+  name: "§r§5§lWardrobe"
+  lore:
+    - ""
+    - "§7Customize your"
+    - "§7armour appearance."
+    - ""
+    - "§eClick to view!"
+
+equipment_button:
+  name: "§r§9§lEquipment"
+  lore:
+    - ""
+    - "§7View and equip"
+    - "§7your SkyBlock equipment."
+    - ""
+    - "§eClick to view!"
+
+fast_travel_button:
+  name: "§r§b§lFast Travel"
+  lore:
+    - ""
+    - "§7Teleport to different"
+    - "§7locations on SkyBlock."
+    - ""
+    - "§eClick to view!"
+
+settings_button:
+  name: "§r§7§lSettings"
+  lore:
+    - ""
+    - "§7Configure your personal"
+    - "§7SkyBlock settings."
+    - ""
+    - "§eClick to open!"
+
+close_button:
+  name: "§r§c§lClose"
+  lore:
+    - ""
+    - "§7Close this menu."
+
+booster_cookie_button:
+  name: "§r§6§lBooster Cookie"
+  lore:
+    - ""
+    - "§7Consume for temporary"
+    - "§7SkyBlock buffs."
+    - ""
+    - "§eClick to view!"
+
+information_button:
+  name: "§r§e§lInformation"
+  lore:
+    - ""
+    - "§7Learn more about"
+    - "§7DarkPixel SkyBlock."
+    - ""
+    - "§7&fVersion: §b2.0.0"
+    - "§7Author: §bDarkPixel"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BACK BUTTON
+# ─────────────────────────────────────────────────────────────────────────────
+back_button:
+  name: "§r§c§lGo Back"
+  lore:
+    - ""
+    - "§7Return to the"
+    - "§7previous menu."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# COMING SOON PLACEHOLDER
+# ─────────────────────────────────────────────────────────────────────────────
+coming_soon:
+  name: "§r§7§lComing Soon"
+  lore:
+    - ""
+    - "§7This feature is"
+    - "§7under construction."

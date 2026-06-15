@@ -1,0 +1,66 @@
+# DarkPixelSkyBlock - Messages Configuration
+# Use & for colour codes. Use {player}, {amount}, {level} etc. as placeholders.
+
+prefix: "&8[&bSkyBlock&8]&r "
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GENERAL
+# ─────────────────────────────────────────────────────────────────────────────
+general:
+  no_permission: "&cYou do not have permission to do that."
+  player_only: "&cThis command can only be used by players."
+  player_not_found: "&cPlayer &e{player}&c not found."
+  feature_disabled: "&cThis feature is currently disabled."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MENU ITEM
+# ─────────────────────────────────────────────────────────────────────────────
+menu_item:
+  restored: "&aYour SkyBlock Menu item has been restored."
+  cannot_drop: "&cYou cannot drop the SkyBlock Menu item!"
+  cannot_move: "&cYou cannot move the SkyBlock Menu item!"
+  cannot_store: "&cYou cannot store the SkyBlock Menu item in a container!"
+  given: "&aGave SkyBlock Menu item to &e{player}&a."
+  given_self: "&aYou have been given the SkyBlock Menu item."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MENUS
+# ─────────────────────────────────────────────────────────────────────────────
+menus:
+  closed: "&7Menu closed."
+  back: "&7Going back..."
+  coming_soon: "&eThis feature is coming soon!"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PROFILE
+# ─────────────────────────────────────────────────────────────────────────────
+profile:
+  info_line1: "&7Name: &f{player}"
+  info_line2: "&7SkyBlock Level: &b{level}"
+  info_line3: "&7Coins: &6{coins}"
+  info_line4: "&7Bank: &6{bank}"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SKILLS
+# ─────────────────────────────────────────────────────────────────────────────
+skills:
+  level_up: "&aCongratulations! Your &e{skill}&a skill reached level &b{level}&a!"
+  max_level: "&eYour &b{skill}&e skill is at max level!"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ECONOMY
+# ─────────────────────────────────────────────────────────────────────────────
+economy:
+  balance: "&7Your balance: &6{amount} Coins"
+  not_enough: "&cYou do not have enough Coins!"
+  received: "&aYou received &6{amount} Coins&a."
+  paid: "&aYou paid &6{amount} Coins&a."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ERRORS
+# ─────────────────────────────────────────────────────────────────────────────
+errors:
+  generic: "&cAn error occurred. Please try again."
+  data_save: "&cFailed to save your data. Please contact an administrator."
+  data_load: "&cFailed to load your data. Please contact an administrator."
+  economy_provider: "&cEconomy provider is not available."

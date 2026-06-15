@@ -1,0 +1,37 @@
+name: DarkPixelSkyBlock
+main: DarkPixelSkyBlock\Main
+version: "2.0.0"
+api: ["5.0.0"]
+description: "Hypixel SkyBlock Menu system for PocketMine-MP Bedrock"
+author: DarkPixel
+website: https://github.com/DarkPixel/DarkPixelSkyBlock
+load: POSTWORLD
+
+softdepend:
+  - EconomyAPI
+
+commands:
+  sbmenu:
+    description: "Open the SkyBlock Menu"
+    usage: "/sbmenu"
+    permission: darkpixelskyblock.command.sbmenu
+    aliases: [skyblock, sb]
+  givemenuitem:
+    description: "Give the SkyBlock Menu item to a player"
+    usage: "/givemenuitem [player]"
+    permission: darkpixelskyblock.command.givemenuitem
+    aliases: [givesb]
+
+permissions:
+  darkpixelskyblock.command.sbmenu:
+    description: "Allows using the /sbmenu command"
+    default: true
+  darkpixelskyblock.command.givemenuitem:
+    description: "Allows using the /givemenuitem command"
+    default: op
+  darkpixelskyblock.bypass.restrictions:
+    description: "Bypass SkyBlock item restrictions"
+    default: op
+  darkpixelskyblock.admin:
+    description: "Full admin access to DarkPixelSkyBlock"
+    default: op
