@@ -4,12 +4,12 @@ A comprehensive Hypixel SkyBlock menu system for PocketMine-MP Bedrock Edition. 
 
 ## Version
 
-**2.0.0** — PocketMine-MP API 5.0.0+
+**2.0.0** — PocketMine-MP API 5.41.0+
 
 ## Requirements
 
-- **PocketMine-MP 5.0.0+** (API 5.0.0 or higher)
-- **PHP 8.1+**
+- **PocketMine-MP 5.41.0+** (API 5.41.0 or higher)
+- **PHP 8.2+**
 
 ### Optional Dependencies
 - **EconomyAPI** — For external economy integration (soft dependency)
