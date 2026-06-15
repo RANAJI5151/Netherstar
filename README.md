@@ -1,70 +1,88 @@
 # DarkPixelSkyBlock
 
-Hypixel SkyBlock Menu system for PocketMine-MP Bedrock Edition.
+A comprehensive Hypixel SkyBlock menu system for PocketMine-MP Bedrock Edition. Provides an interactive GUI system with multiple menu screens for profile management, skills, collections, equipment, and more.
 
 ## Version
 
-**2.0.0** — PMMP API 5.41.0+ / 5.43.2 compatible
+**2.0.0** — PocketMine-MP API 5.0.0+
 
 ## Requirements
 
-### Required
-- **PocketMine-MP 5.43.2+ (API 5.41.0+ required for the InvMenu virion)**
-- **PHP 8.2**
-- **DevTools** (for virion loading)
-- **InvMenu virion** (library, not plugin)
+- **PocketMine-MP 5.0.0+** (API 5.0.0 or higher)
+- **PHP 8.1+**
 
-### Optional
-- **EconomyAPI** (soft dependency for external economy)
+### Optional Dependencies
+- **EconomyAPI** — For external economy integration (soft dependency)
 
 ## Installation
 
-1. Install **DevTools** plugin if you haven't already:
-   - Download from [poggit.io/p/DevTools](https://poggit.io/p/DevTools)
-   - Place `DevTools.phar` in your `plugins/` folder
-
-2. Install **InvMenu virion**:
-   - Download the latest `InvMenu.phar` virion from [poggit.io/p/InvMenu](https://poggit.io/p/InvMenu)
-   - Place `InvMenu.phar` in your server root **next to your `plugins/` folder** (NOT inside `plugins/`)
-   - DevTools will automatically inject the virion into any plugin that needs it
-
-3. Install **DarkPixelSkyBlock**:
-   - Place `DarkPixelSkyBlock.phar` in your `plugins/` folder
-   - Restart the server
-
-## What NOT to do
-
-- **Do NOT** install InvMenu as a standalone plugin (`.phar` inside `plugins/`). This plugin uses InvMenu as a **virion/library**, not a plugin dependency.
-- **Do NOT** add `depend: [InvMenu]` or `softdepend: [InvMenu]` — the virion is injected at build time by DevTools.
+1. Download the latest release of `DarkPixelSkyBlock.phar`
+2. Place it in your `plugins/` folder
+3. Restart your server
+4. Configuration files will be generated automatically in `plugins/DarkPixelSkyBlock/`
 
 ## Features
 
-- **16-button SkyBlock Menu** with Profile, Skills, Collections, Recipe Book, Trades, Quest Log, Calendar, Storage, Bank, Pets, Crafting, Wardrobe, Equipment, Fast Travel, Settings
-- **Hotbar menu item** with right-click detection
-- **Inventory protection** — menu item cannot be dropped, moved, or stored
-- **Configurable** via `config.yml`, `menus.yml`, `items.yml`, `messages.yml`
-- **Data providers** — JSON, YAML, or SQLite
-- **Economy bridge** — EconomyAPI or internal economy
-- **Sound system** with 8 built-in UI sounds
-- **Settings toggles** — sound effects, tutorial hints, menu animations
+- **Multiple Menu Screens** — Main Menu, Profile, Skills, Collections, Recipe Book, Equipment, Fast Travel, Settings, Wardrobe, Storage, and Quest Menu
+- **Menu Item System** — Hotbar menu item with right-click detection and inventory protection
+- **Configurable UI** — Customize menus via YAML configuration files
+- **Data Storage** — Multiple storage providers: JSON, YAML, and SQLite
+- **Economy Integration** — Support for both EconomyAPI and internal economy systems
+- **Sound System** — Built-in UI sound effects for menu interactions
+- **Profile System** — Player profile management and data persistence
+- **Auto-Save** — Automatic data saving with configurable intervals
+
+## Configuration
+
+Configuration files are located in `plugins/DarkPixelSkyBlock/resources/`:
+
+- `config.yml` — Main plugin configuration
+- `menus.yml` — Menu layout and button definitions
+- `items.yml` — Item configuration and definitions
+- `messages.yml` — Plugin messages and locale strings
+
+## Commands
+
+| Command | Aliases | Permission | Description |
+|---------|---------|-----------|-------------|
+| `/sbmenu` | `/skyblock`, `/sb` | `darkpixelskyblock.command.sbmenu` | Open the SkyBlock Menu |
+| `/givemenuitem [player]` | `/givesb` | `darkpixelskyblock.command.givemenuitem` | Give the SkyBlock menu item to a player |
 
 ## Permissions
 
 | Permission | Default | Description |
 |------------|---------|-------------|
-| `darkpixelskyblock.command.sbmenu` | `true` | Use /sbmenu |
-| `darkpixelskyblock.command.givemenuitem` | `op` | Use /givemenuitem |
-| `darkpixelskyblock.bypass.restrictions` | `op` | Bypass item restrictions |
-| `darkpixelskyblock.admin` | `op` | Full admin access |
+| `darkpixelskyblock.command.sbmenu` | `true` | Allow using the /sbmenu command |
+| `darkpixelskyblock.command.givemenuitem` | `op` | Allow using the /givemenuitem command |
+| `darkpixelskyblock.bypass.restrictions` | `op` | Bypass SkyBlock item restrictions |
+| `darkpixelskyblock.admin` | `op` | Full admin access to DarkPixelSkyBlock |
 
-## Commands
+## Supported Menu Screens
 
-| Command | Alias | Description |
-|---------|-------|-------------|
-| `/sbmenu` | `/skyblock`, `/sb` | Open the SkyBlock Menu |
-| `/givemenuitem [player]` | `/givesb` | Give the menu item to a player |
+- **Main Menu** — Primary hub for all menu functions
+- **Profile Menu** — Player profile information
+- **Skills Menu** — Skill tracking and management
+- **Collections Menu** — Collection tracking
+- **Equipment Menu** — Equipment management
+- **Wardrobe Menu** — Cosmetic outfit management
+- **Storage Menu** — Storage access
+- **Fast Travel Menu** — Quick travel locations
+- **Quest Menu** — Quest tracking and logs
+- **Recipe Book Menu** — Recipe browsing
+- **Settings Menu** — User preferences and toggles
 
-## Support
+## Data Providers
 
-- GitHub: https://github.com/DarkPixel/DarkPixelSkyBlock
-- PMMP Forums: [Search DarkPixelSkyBlock](https://forums.pmmp.io)
+The plugin supports multiple storage backends:
+- **JSON** — File-based JSON storage
+- **YAML** — File-based YAML storage
+- **SQLite** — Embedded database storage
+
+## Author
+
+- **DarkPixel**
+
+## Links
+
+- **GitHub** — https://github.com/DarkPixel/DarkPixelSkyBlock
+- **Website** — https://github.com/DarkPixel/DarkPixelSkyBlock
